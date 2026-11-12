@@ -6,12 +6,25 @@
 
 Point it at any model — hosted, or running on a machine of your own — hand the agents real tools, and
 watch the loop on a live map. It is one folder of PHP and static files, so it runs on the host you
-already pay for.
+already pay for, and against a local model it costs nothing to leave running.
 
 **[The app](https://github.com/autonomous-loop-studio/Autonomous)** ·
 **[Landing page](https://autonomous-loop-studio.github.io/Autonomous/)** ·
-**[Roadmap](https://github.com/autonomous-loop-studio/Autonomous/discussions/1)** ·
-**[Releases](https://github.com/autonomous-loop-studio/Autonomous/releases)**
+**[Releases](https://github.com/autonomous-loop-studio/Autonomous/releases)** ·
+**[Roadmap](https://github.com/autonomous-loop-studio/Autonomous/discussions/1)**
+
+## Start it in five minutes
+
+```
+git clone https://github.com/autonomous-loop-studio/Autonomous.git
+cd Autonomous
+./start.sh        # Windows: double-click start.bat
+```
+
+The first run starts Apache + PHP, creates your access token and opens the app. Paste that token into
+**Config → Access token**, add one provider key — or point an agent at Ollama on your own LAN — and you
+are talking to an agent. Nothing ships with a key, and a fresh copy refuses to serve until a token
+exists.
 
 ## What's inside
 
@@ -30,5 +43,13 @@ already pay for.
   <img src="https://raw.githubusercontent.com/autonomous-loop-studio/Autonomous/master/screenshots/routing-three-workfows.png" width="49%" alt="A routing chart: three workflows handing work to the same fleet of agents.">
 </p>
 
-Apache-2.0. Free tiers are paced to each provider's ceiling, so one exhausted key never stops the fleet.
-Issues and questions belong in [the repository](https://github.com/autonomous-loop-studio/Autonomous), not here.
+## Why it exists
+
+Most of this category assumes Docker, a Python toolchain, or a VPS you rent by the month. This assumes
+the PHP you already have. `exec`, the browser and MCP are off until you switch them on, every write
+asks first, and there is no account, no cloud and no telemetry — delete the folder and it is gone.
+
+Apache-2.0. Free tiers are paced to each provider's real ceiling, so one exhausted key never stops the
+fleet.
+
+Issues, questions and feature requests belong in [the repository](https://github.com/autonomous-loop-studio/Autonomous), not here.
